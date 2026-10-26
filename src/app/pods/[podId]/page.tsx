@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { connection } from "next/server";
 import { Suspense } from "react";
 import { PodDetailsForm } from "@/features/pods/components/PodDetailsForm";
 import { ShareBar } from "@/features/pods/components/ShareBar";
@@ -29,6 +30,7 @@ export default function PodEditorPage({ params }: PageProps<"/pods/[podId]">) {
 }
 
 async function PodEditor({ params }: Pick<PageProps<"/pods/[podId]">, "params">) {
+  await connection(); // per-request data: never prerender this part
   const { podId } = await params;
   if (!podIdSchema.safeParse(podId).success) notFound();
 

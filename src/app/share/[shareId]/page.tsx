@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { connection } from "next/server";
 import { Suspense } from "react";
 import { ViewBeacon } from "@/features/pods/components/ViewBeacon";
 import { podDisplayTitle, shareIdSchema } from "@/features/pods/domain/pod";
@@ -26,6 +27,7 @@ export default function BuyerPodPage({ params }: PageProps<"/share/[shareId]">) 
 }
 
 async function BuyerPod({ params }: Pick<PageProps<"/share/[shareId]">, "params">) {
+  await connection(); // per-request data: never prerender this part
   const { shareId } = await params;
   if (!shareIdSchema.safeParse(shareId).success) notFound();
 

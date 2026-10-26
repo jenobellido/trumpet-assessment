@@ -1,0 +1,5 @@
+# Pod editor and buyer links are private; keep them out of search engines.
+User-agent: *
+Disallow: /pods/
+Disallow: /share/
+Disallow: /api/
