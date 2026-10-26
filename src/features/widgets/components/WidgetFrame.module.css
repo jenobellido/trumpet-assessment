@@ -1,0 +1,25 @@
+.handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.75rem;
+  margin-left: calc(var(--space-1) * -1);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  fill: currentColor;
+  cursor: grab;
+  touch-action: none; /* let the pointer sensor own touch drags */
+}
+
+.handle:hover {
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+
+.handle:active {
+  cursor: grabbing;
+}

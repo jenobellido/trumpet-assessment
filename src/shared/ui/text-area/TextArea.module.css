@@ -1,0 +1,48 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 6rem;
+  max-height: 24rem;
+  /* Grows with its content where supported; scrolls beyond max-height. */
+  field-sizing: content;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: inherit;
+  font: inherit;
+  line-height: 1.5;
+  resize: vertical;
+  overflow-wrap: anywhere;
+}
+
+.textarea:hover {
+  border-color: var(--color-border-strong);
+}
+
+.textarea:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -1px;
+  border-color: transparent;
+}
+
+.counter {
+  align-self: flex-end;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.nearLimit {
+  color: var(--color-warning);
+}

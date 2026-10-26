@@ -1,0 +1,64 @@
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-4);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.dragOver,
+.preview[data-drag-over] {
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+}
+
+.dropTitle {
+  font-weight: 600;
+}
+
+.dropHint {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  max-height: 24rem;
+  margin: 0 auto;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+}
+
+.imageActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.error {
+  margin-top: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-danger);
+}

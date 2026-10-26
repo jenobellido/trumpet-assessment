@@ -1,0 +1,40 @@
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.label:not(:empty)::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: var(--space-2);
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: middle;
+}
+
+.indicator[data-status="unsaved"] {
+  color: var(--color-warning);
+}
+
+.indicator[data-status="saved"] {
+  color: var(--color-success);
+}
+
+.indicator[data-status="error"] {
+  color: var(--color-danger);
+}
+
+.indicator[data-status="saving"] .label::before {
+  animation: pulse 900ms ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}

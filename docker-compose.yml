@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      context: .
+      target: runtime
+    ports:
+      - "3000:3000"
+    # Uses in-memory storage by default. To use Upstash Redis instead, create
+    # a .env file from .env.example and uncomment the line below.
+    # env_file: .env
+    restart: unless-stopped
